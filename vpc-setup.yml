@@ -38,7 +38,7 @@
         map_public: yes
         resource_tags:
           Name: vprof-sub2
-      register: subnet-2
+      register: subnet
 
     - name: associate subnet to the VPC (zone 3)
       ec2_vpc_subnet:
@@ -50,7 +50,7 @@
         map_public: yes
         resource_tags:
           Name: vprof-sub3
-      register: subnet-3
+      register: subnet
 
     - name: associate subnet to the VPC (zone 4)
       ec2_vpc_subnet:
@@ -62,7 +62,7 @@
         map_public: yes
         resource_tags:
           Name: vprof-sub4
-      register: subnet-4
+      register: subnet
 
     - name: associate subnet to the VPC (zone 5)
       ec2_vpc_subnet:
@@ -74,7 +74,7 @@
         map_public: yes
         resource_tags:
           Name: vprof-sub5
-      register: subnet-5
+      register: subnet
 
     - name: associate subnet to the VPC (zone 6)
       ec2_vpc_subnet:
@@ -86,4 +86,4 @@
         map_public: yes
         resource_tags:
           Name: vprof-sub6
-      register: subnet-6
+      register: subnet
