@@ -27,3 +27,63 @@
         resource_tags:
           Name: vprof-sub1
       register: subnet
+
+    - name: associate subnet to the VPC (zone 2)
+      ec2_vpc_subnet:
+        state: present
+        vpc_id: "{{ vpcout.vpc.id }}"
+        region: "{{ region }}"
+        cidr: "{{ pubSub2Cidr }}"
+
+        map_public: yes
+        resource_tags:
+          Name: vprof-sub2
+      register: subnet-2
+
+    - name: associate subnet to the VPC (zone 3)
+      ec2_vpc_subnet:
+        state: present
+        vpc_id: "{{ vpcout.vpc.id }}"
+        region: "{{ region }}"
+        cidr: "{{ pubSub3Cidr }}"
+
+        map_public: yes
+        resource_tags:
+          Name: vprof-sub3
+      register: subnet-3
+
+    - name: associate subnet to the VPC (zone 4)
+      ec2_vpc_subnet:
+        state: present
+        vpc_id: "{{ vpcout.vpc.id }}"
+        region: "{{ region }}"
+        cidr: "{{ privSub1Cidr }}"
+
+        map_public: yes
+        resource_tags:
+          Name: vprof-sub4
+      register: subnet-4
+
+    - name: associate subnet to the VPC (zone 5)
+      ec2_vpc_subnet:
+        state: present
+        vpc_id: "{{ vpcout.vpc.id }}"
+        region: "{{ region }}"
+        cidr: "{{ privSub2Cidr }}"
+
+        map_public: yes
+        resource_tags:
+          Name: vprof-sub5
+      register: subnet-5
+
+    - name: associate subnet to the VPC (zone 6)
+      ec2_vpc_subnet:
+        state: present
+        vpc_id: "{{ vpcout.vpc.id }}"
+        region: "{{ region }}"
+        cidr: "{{ privSub3Cidr }}"
+
+        map_public: yes
+        resource_tags:
+          Name: vprof-sub6
+      register: subnet-6
