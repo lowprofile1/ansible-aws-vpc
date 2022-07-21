@@ -17,13 +17,13 @@
         var: vpcout
 
     - name: associate subnet to the VPC
-  ec2_vpc_subnet:
-    state: present
-    vpc_id: "{{ vpcout.vpc.id }}"
-    region: "{{ region }}"
-    cidr: "{{ pubSub1Cidr }}"
+        ec2_vpc_subnet:
+          state: present
+          vpc_id: "{{ vpcout.vpc.id }}"
+          region: "{{ region }}"
+          cidr: "{{ pubSub1Cidr }}"
 
-    map_public: yes
-    resource_tags:
-      Name: "{{ subnet_name }}"
-  register: subnet
+          map_public: yes
+          resource_tags:
+             Name: "{{ subnet_name }}"
+        register: subnet
