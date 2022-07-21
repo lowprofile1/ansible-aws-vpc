@@ -25,5 +25,5 @@
 
           map_public: yes
           resource_tags:
-             Name: vprof sub1
+             Name: vprof-sub1
         register: subnet
